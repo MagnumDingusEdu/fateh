@@ -133,11 +133,14 @@ ISR(TIMER1_COMPA_vect) {//Interrupt at freq of 1kHz to measure reed switch
 
 void displayMPH() {
   Serial.print(kph);
-  Serial.print("\t");
+  Serial.print(",");
   Serial.print(distance_covered);
-  Serial.print("\t");
+  Serial.print(",");
   Serial.print(high_speed);
-  Serial.println();
+  Serial.print(",");
+  Serial.print(millis()/1000);
+  Serial.print("\n");
+
   
   lcd.setCursor(0, 0);
   lcd.print(kph);
